@@ -1,44 +1,42 @@
-# Electronic diary (На Python) v2.0
+# Electronic diary (In Python) v2.0
 # Powered by Marat Remushev
 
-import time
-
-Mon = ['Понедельник -']
-Tue = ['Вторник -']
-Wed = ['Среда -']
-Th = ['Четверг -']
-Fr = ['Пятница -']
-Sat = ['Суббота -']
-Sun = ['Воскресенье -']
+Mon = ['Monday -']
+Tue = ['Tuesday -']
+Wed = ['Wednesday -']
+Th = ['Thursday -']
+Fr = ['Friday -']
+Sat = ['Saturday -']
+Sun = ['Sunday -']
 journal = [Mon, Tue, Wed, Th, Fr, Sat, Sun]
 
-# 1 задание
+# 1 task
 a = 0
 print('=' * 100)
 for i in range(7):
     a += 1
-    journal[-1 + a].append('Нет дел')
+    journal[-1 + a] .append('No cases')
 
 print(journal)
 print('=' * 100)
 
 while True:
-    line = input('Введите команду: ')
+    line = input('Enter the command:')
 
-    # Команда Print
+    # Print command
     if (line == 'print'):
-        print('Календарь на неделю: ' + str(journal))
+        print('Weekly calendar:' + str(journal))
 
-    # Команда Check
+    # Check command
     if (line == 'check'):
-        print('1 - Понедельник')
-        print('2 - Вторник')
-        print('3 - Среда')
-        print('4 - Четверг')
-        print('5 - Пятница')
-        print('6 - Суббота')
-        print('7 - Воскресенье')
-        choice = input('Какой день недели вы хотите посмотреть?')
+        print('1 - Monday')
+        print('2 - Tuesday')
+        print('3 - Wednesday')
+        print('4 - Thursday')
+        print('5 - Friday')
+        print('6 - Saturday')
+        print('7 - Sunday')
+        choice = input('What day of the week do you want to watch?')
         if choice == '1':
             print(Mon)
         if choice == '2':
@@ -54,23 +52,23 @@ while True:
         if choice == '7':
             print(Sun)
 
-    # Команда Edit
+    # Edit command
     def edit(day):
         del day[1]
         day.append(ed)
-        print('Дело изменено!')
+        print('Case changed!')
         print()
 
     if (line == 'edit'):
-        print('1 - Понедельник')
-        print('2 - Вторник')
-        print('3 - Среда')
-        print('4 - Четверг')
-        print('5 - Пятница')
-        print('6 - Суббота')
-        print('7 - Воскресенье')
-        choice = input('Какой день недели вы хотите выбрать?')
-        ed = input('Введите цель дела: ')
+        print('1 - Monday')
+        print('2 - Tuesday')
+        print('3 - Wednesday')
+        print('4 - Thursday')
+        print('5 - Friday')
+        print('6 - Saturday')
+        print('7 - Sunday')
+        choice = input('Which day of the week do you want to choose?')
+        ed = input('Enter the purpose of the case:')
         if choice == '1':
             edit(Mon)
         if choice == '2':
@@ -89,29 +87,29 @@ while True:
     def delete(day):
         del day[1]
         day.append(ed)
-        print('Дело изменено!')
+        print('Case changed!')
         print()
 
-    # Команда Delete
+    # Delete command
     def delete(day):
         del day[1]
-        day.append('Нет дел')
-        print('Дело удалено!')
+        day.append('No to do')
+        print('Case deleted!')
         print()
 
     if (line == 'delete'):
-        print('1 - Очистить дело')
-        print('2 - Обнулить список дел')
-        choice = input('Выберете опцию: ')
+        print('1 - Clear case')
+        print('2 - Reset to-do list')
+        choice = input('Choose an option:')
         if choice == '1':
-            print('1 - Понедельник')
-            print('2 - Вторник')
-            print('3 - Среда')
-            print('4 - Четверг')
-            print('5 - Пятница')
-            print('6 - Суббота')
-            print('7 - Воскресенье')
-            choice = input('Какое дело вы хотите очистить?')
+            print('1 - Monday')
+            print('2 - Tuesday')
+            print('3 - Wednesday')
+            print('4 - Thursday')
+            print('5 - Friday')
+            print('6 - Saturday')
+            print('7 - Sunday')
+            choice = input('What case do you want to clear?')
             if choice == '1':
                 delete(Mon)
             if choice == '2':
@@ -128,35 +126,35 @@ while True:
                 delete(Sun)
 
         if choice == '2':
-            print('1 - Да')
-            print('2 - Нет')
-            choice = input('Вы действительно хотите обнулить список?')
+            print('1 - Yes')
+            print('2 - No')
+            choice = input('Are you sure you want to nullify the list?')
             if choice == '1':
                 del Mon[1]
-                Mon.append('Нет дел')
+                Mon.append('No cases')
                 del Tue[1]
-                Tue.append('Нет дел')
+                Tue.append('No to do')
                 del Wed[1]
-                Wed.append('Нет дел')
+                Wed.append('No cases')
                 del Th[1]
-                Th.append('Нет дел')
+                Th.append('No cases')
                 del Fr[1]
-                Fr.append('Нет дел')
+                Fr.append('No cases')
                 del Sat[1]
-                Sat.append('Нет дел')
+                Sat.append('No cases')
                 del Sun[1]
-                Sun.append('Нет дел')
-                print('Список дел обнулен!')
+                Sun.append('No cases')
+                print('To-do list has been cleared!')
                 print()
 
             if choice == '2':
                 continue
 
-    # Команда Help
+    # Help command
     if (line == 'help'):
-        print('''1) "print" - Вывести календарь на неделю
-2) "check" - Посмотреть дело
-3) "edit" - Изменить дело
-4) "delete" - Обнулить или очистить дело
-5) "help" - Посмотреть список команд
+        print(''' 1) "print" - Display the calendar for the week
+2) "check" - View the case
+3) "edit" - Change the case
+4) "delete" - Zero or clear the case
+5) "help" - View the list of commands
 ''')

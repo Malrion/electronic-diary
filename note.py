@@ -63,8 +63,7 @@ while (True):
 5) "insert" - Adding an item to a specific place in the list
 6) "exit" - Turn off the bot
 7) "help" - Displays a list of possible commands ''')
-        print()
-        time.sleep(2)
+        input('Press enter to exit')
     elif (line == 'exit'):
         print('Shutting down ...')
         time.sleep(2)
