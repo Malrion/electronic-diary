@@ -24,11 +24,11 @@ print('=' * 100)
 
 while True:
     line = input('Введите команду: ')
-    
+
     # Команда Print
     if (line == 'print'):
         print('Календарь на неделю: ' + str(journal))
-    
+
     # Команда Check
     if (line == 'check'):
         print('1 - Понедельник')
@@ -60,7 +60,7 @@ while True:
         day.append(ed)
         print('Дело изменено!')
         print()
-    
+
     if (line == 'edit'):
         print('1 - Понедельник')
         print('2 - Вторник')
@@ -85,20 +85,20 @@ while True:
             edit(Sat)
         if choice == '7':
             edit(Sun)
-    
+
     def delete(day):
         del day[1]
         day.append(ed)
         print('Дело изменено!')
         print()
-    
+
     # Команда Delete
     def delete(day):
         del day[1]
         day.append('Нет дел')
         print('Дело удалено!')
         print()
-    
+
     if (line == 'delete'):
         print('1 - Очистить дело')
         print('2 - Обнулить список дел')
@@ -126,33 +126,33 @@ while True:
                 delete(Sat)
             if choice == '7':
                 delete(Sun)
-        
+
         if choice == '2':
             print('1 - Да')
             print('2 - Нет')
             choice = input('Вы действительно хотите обнулить список?')
             if choice == '1':
-                del Mon [1]
+                del Mon[1]
                 Mon.append('Нет дел')
-                del Tue [1]
+                del Tue[1]
                 Tue.append('Нет дел')
-                del Wed [1]
+                del Wed[1]
                 Wed.append('Нет дел')
-                del Th [1]
+                del Th[1]
                 Th.append('Нет дел')
-                del Fr [1]
+                del Fr[1]
                 Fr.append('Нет дел')
-                del Sat [1]
+                del Sat[1]
                 Sat.append('Нет дел')
-                del Sun [1]
+                del Sun[1]
                 Sun.append('Нет дел')
                 print('Список дел обнулен!')
                 print()
-            
+
             if choice == '2':
                 continue
-    
-    # Команда Help    
+
+    # Команда Help
     if (line == 'help'):
         print('''1) "print" - Вывести календарь на неделю
 2) "check" - Посмотреть дело
@@ -160,4 +160,3 @@ while True:
 4) "delete" - Обнулить или очистить дело
 5) "help" - Посмотреть список команд
 ''')
-    
